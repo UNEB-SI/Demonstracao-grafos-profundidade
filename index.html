@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Busca em profundidade</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="mini-default.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+  </head>
+  
+  <body>
+      <header>
+          <a href="#" class="logo">Logo</a>
+          <button>Home</button>
+          <a href="#" class="button">News</a>
+          <span>|</span>
+          <button>About</button>
+          <a href="#" role="button">Contact</a>
+        </header>
+        <div class="col-sm row">
+            <div class="col-sm-6">
+                <div class="card fluid">
+                    <div class="section">
+                      <h3>Matriz de adjacencia</h3>
+                      <table class="scrollable" style="max-height: none;">
+                          <!--<caption>Matriz de adjacencia</caption>-->
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>1</th>
+                              <th>2</th>
+                              <th>3</th>
+                              <th>4</th>
+                              <th>5</th>
+                              <th>6</th>
+                              <th>7</th>
+                              <th>8</th>
+                              <th>9</th>
+                              <th>10</th>
+                              
+                              
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th data-label="Name">1</th>
+                              <td data-label="Surname">0</td>
+                              <td data-label="Alias">1</td>
+                              <td data-label="Alias">0</td>
+                              <td data-label="Surname">0</td>
+                              <td data-label="Alias">1</td>
+                              <td data-label="Alias">0</td>
+                              <td data-label="Surname">0</td>
+                              <td data-label="Alias">1</td>
+                              <td data-label="Alias">0</td>
+                              <td data-label="Surname">0</td>
+                            </tr>
+                            <tr>
+                                <th data-label="Name">2</th>
+                                <td data-label="Surname">0</td>
+                                <td data-label="Alias">1</td>
+                                <td data-label="Alias">0</td>
+                                <td data-label="Surname">0</td>
+                                <td data-label="Alias">1</td>
+                                <td data-label="Alias">0</td>
+                                <td data-label="Surname">0</td>
+                                <td data-label="Alias">1</td>
+                                <td data-label="Alias">0</td>
+                                <td data-label="Surname">0</td>
+                              </tr>
+                              <tr>
+                                  <th data-label="Name">3</th>
+                                  <td data-label="Surname">0</td>
+                                  <td data-label="Alias">1</td>
+                                  <td data-label="Alias">0</td>
+                                  <td data-label="Surname">0</td>
+                                  <td data-label="Alias">1</td>
+                                  <td data-label="Alias">0</td>
+                                  <td data-label="Surname">0</td>
+                                  <td data-label="Alias">1</td>
+                                  <td data-label="Alias">0</td>
+                                  <td data-label="Surname">0</td>
+                                </tr>
+                                <tr>
+                                    <th data-label="Name">4</th>
+                                    <td data-label="Surname">0</td>
+                                    <td data-label="Alias">1</td>
+                                    <td data-label="Alias">0</td>
+                                    <td data-label="Surname">0</td>
+                                    <td data-label="Alias">1</td>
+                                    <td data-label="Alias">0</td>
+                                    <td data-label="Surname">0</td>
+                                    <td data-label="Alias">1</td>
+                                    <td data-label="Alias">0</td>
+                                    <td data-label="Surname">0</td>
+                                  </tr>
+                                  <tr>
+                                      <th data-label="Name">5</th>
+                                      <td data-label="Surname">0</td>
+                                      <td data-label="Alias">1</td>
+                                      <td data-label="Alias">0</td>
+                                      <td data-label="Surname">0</td>
+                                      <td data-label="Alias">1</td>
+                                      <td data-label="Alias">0</td>
+                                      <td data-label="Surname">0</td>
+                                      <td data-label="Alias">1</td>
+                                      <td data-label="Alias">0</td>
+                                      <td data-label="Surname">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th data-label="Name">6</th>
+                                        <td data-label="Surname">0</td>
+                                        <td data-label="Alias">1</td>
+                                        <td data-label="Alias">0</td>
+                                        <td data-label="Surname">0</td>
+                                        <td data-label="Alias">1</td>
+                                        <td data-label="Alias">0</td>
+                                        <td data-label="Surname">0</td>
+                                        <td data-label="Alias">1</td>
+                                        <td data-label="Alias">0</td>
+                                        <td data-label="Surname">0</td>
+                                      </tr>
+                                      <tr>
+                                          <th data-label="Name">7</th>
+                                          <td data-label="Surname">0</td>
+                                          <td data-label="Alias">1</td>
+                                          <td data-label="Alias">0</td>
+                                          <td data-label="Surname">0</td>
+                                          <td data-label="Alias">1</td>
+                                          <td data-label="Alias">0</td>
+                                          <td data-label="Surname">0</td>
+                                          <td data-label="Alias">1</td>
+                                          <td data-label="Alias">0</td>
+                                          <td data-label="Surname">0</td>
+                                        </tr>
+                                        <tr>
+                                            <th data-label="Name">8</th>
+                                            <td data-label="Surname">0</td>
+                                            <td data-label="Alias">1</td>
+                                            <td data-label="Alias">0</td>
+                                            <td data-label="Surname">0</td>
+                                            <td data-label="Alias">1</td>
+                                            <td data-label="Alias">0</td>
+                                            <td data-label="Surname">0</td>
+                                            <td data-label="Alias">1</td>
+                                            <td data-label="Alias">0</td>
+                                            <td data-label="Surname">0</td>
+                                          </tr>
+                                          <tr>
+                                              <th data-label="Name">9</th>
+                                              <td data-label="Surname">0</td>
+                                              <td data-label="Alias">1</td>
+                                              <td data-label="Alias">0</td>
+                                              <td data-label="Surname">0</td>
+                                              <td data-label="Alias">1</td>
+                                              <td data-label="Alias">0</td>
+                                              <td data-label="Surname">0</td>
+                                              <td data-label="Alias">1</td>
+                                              <td data-label="Alias">0</td>
+                                              <td data-label="Surname">0</td>
+                                            </tr>
+                                            <tr>
+                                              <th data-label="Name">10</th>
+                                              <td data-label="Surname">0</td>
+                                              <td data-label="Alias">1</td>
+                                              <td data-label="Alias">0</td>
+                                              <td data-label="Surname">0</td>
+                                              <td data-label="Alias">1</td>
+                                              <td data-label="Alias">0</td>
+                                              <td data-label="Surname">0</td>
+                                              <td data-label="Alias">1</td>
+                                              <td data-label="Alias">0</td>
+                                              <td data-label="Surname">0</td>
+                                            </tr>
+
+                          </tbody>
+                        </table>
+                    </div>
+                  </div>     
+            </div>
+            <div class="col-sm-6">
+                <div class="card fluid">
+                    <div class="section">
+                      <h3>Visuzalização</h3>
+                      <graph></graph>
+                    </div>
+                  </div>                
+            </div>
+          </div>
+  </body>
+
+  <script src="d3.v3.min.js"></script>
+  <script src="app.js"></script>
+
+  <script>
+    /*
+    links.push({left:false,right:true,source:nodes[2],target:nodes[0]})
+    links.push({left:false,right:true,source:nodes[0],target:nodes[2]})
+    restart()
+    */
+
+
+    function novoVertice() {
+      // prevent I-bar on drag
+      //d3.event.preventDefault();
+
+      // because :active only works in WebKit?
+      svg.classed('active', true);
+
+      node = {id: ++lastNodeId, reflexive: true};
+      node.x = 1;
+      node.y = 1;
+      console.log(node);
+      nodes.push(node);
+
+      restart();
+      return node.id;
+    }
+
+    function novaAresta(vertice_1 , vertice_2){
+      if(vertice_1 != null && vertice_2 != null){
+        links.push({source: nodes[vertice_1], target: nodes[vertice_2], left: true, right: true });
+        restart();
+      }        
+    }
+    function verticeAleatorio() {
+      return Math.floor(Math.random() * (lastNodeId+1 - 0) + 0);
+    }
+
+    
+
+     //JUST FOR FUN, THIS CAN BE HEAVY FOR YOU COMPUTER AFTER SOME TIME
+    /*setInterval(function(){
+      
+      //novaAresta(lastNodeId,novoVertice());
+      //novaAresta(verticeAleatorio(),novoVertice());
+      
+      //console.log(verticeAleatorio());
+    },1000);*/
+
+    </script>
+
+
+</html>
