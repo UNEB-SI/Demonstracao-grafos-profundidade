@@ -229,7 +229,12 @@
       return Math.floor(Math.random() * (lastNodeId+1 - 0) + 0);
     }
 
-    
+    function superSnakeEatsAll(){
+      setInterval(function(){
+        novaAresta(lastNodeId,novoVertice());
+      //novaAresta(verticeAleatorio(),novoVertice());
+      },500);
+    }
 
      //JUST FOR FUN, THIS CAN BE HEAVY FOR YOU COMPUTER AFTER SOME TIME
     /*setInterval(function(){
