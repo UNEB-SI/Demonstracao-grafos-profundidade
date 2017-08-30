@@ -1,0 +1,43 @@
+table td {
+    text-align: center;
+    font-weight: bold;
+    padding: 0px;
+}
+
+table th {
+    background: #3f465a;
+    color: #fff;
+    padding: 0px;
+}
+
+table .empty {
+    background: red;
+    color: #fff;
+}
+header {
+    background: #3f465a;
+}
+
+button.secondary, [type="button"].secondary, [type="submit"].secondary, [type="reset"].secondary, .button.secondary, [role="button"].secondary {
+    background: #e60036;
+    color: #fafafa;
+}
+
+button.inverse, [type="button"].inverse, [type="submit"].inverse, [type="reset"].inverse, .button.inverse, [role="button"].inverse {
+    background: #15b784;
+    color: #fafafa;
+}
+
+header button, header [type="button"], header a.button, header label.button, header .button, header a[role="button"], header label[role="button"], header [role="button"] {
+    background: #495169;
+    color: #f5f5f5;
+}
+
+.input-group [type="checkbox"]:checked+label.switch:after, .input-group [type="radio"]:checked+label.switch:after {
+    background: #15b784;
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):hover, input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus, textarea:hover, textarea:focus, select:hover, select:focus {
+    border-color: #15b784;
+    box-shadow: none;    
+}

@@ -5,6 +5,8 @@
     <title>Busca em profundidade</title>
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="mini-default.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     
@@ -12,18 +14,14 @@
   
   <body>
       <header>
-          <a href="#" class="logo">Logo</a>
-          <button>Home</button>
-          <a href="#" class="button">News</a>
-          <span>|</span>
-          <button>About</button>
-          <a href="#" role="button">Contact</a>
+          <a href="#" class="logo">Grafos Profundidade</a>
+          <a href="https://github.com/UNEB-SI/Demonstracao-grafos-profundidade" role="button"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
         </header>
         <div class="col-sm row">
             <div class="col-sm-6">
                 <div class="card fluid">
                     <div class="section">
-                      <h3>Matriz de adjacencia</h3>
+                      <h3>Matriz de adjacência</h3>
                       <table class="scrollable" style="max-height: none;">
                           <!--<caption>Matriz de adjacencia</caption>-->
                           <thead>
@@ -45,8 +43,8 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <th data-label="Name">1</th>
-                              <td data-label="Surname">0</td>
+                              <th >1</th>
+                              <td onclick="if(this,innerHTML=='1') this.innerHTML='0';else this.innerHTML='1';">0</td>
                               <td data-label="Alias">1</td>
                               <td data-label="Alias">0</td>
                               <td data-label="Surname">0</td>
@@ -177,17 +175,41 @@
 
                           </tbody>
                         </table>
+                        <fieldset>
+                          <div class="input-group fluid">
+                            <label for="nmbr">Matrix size</label>
+                            <input type="number" id="nmbr" value="10" min="1" max="10">                          
+                            <button>Update</button>  
+                          </div>
+                          <div class="input-group fluid">
+                            <div class="input-group" >
+                              <input type="checkbox" id="switch1" tabindex="0">
+                              <label style="margin:auto;margin-left: 57px;" for="switch1" class="switch">AutoStep</label>
+                            </div> 
+                            <div class="button-group">
+                              <button class="large" ><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                              <button class="inverse large" ><i class="fa fa-play" aria-hidden="true"></i></button>                              
+                              <button class="large"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                            
+                          </div>
+                          <div class="input-group fluid">
+                            <button class="inverse large">Restart all</button>
+                            <button class="secondary large" onclick="superSnakeEatsAll()">Don't press this button</button>
+                          </div>
+                        </fieldset>
                     </div>
                   </div>     
             </div>
             <div class="col-sm-6">
                 <div class="card fluid">
                     <div class="section">
-                      <h3>Visuzalização</h3>
-                      <graph></graph>
+                      <h3>Visualização</h3>
+                      <graph style="margin:auto"></graph>
                     </div>
                   </div>                
             </div>
+            
           </div>
   </body>
 
@@ -220,9 +242,10 @@
     }
 
     function novaAresta(vertice_1 , vertice_2){
-      if(vertice_1 != null && vertice_2 != null){
+      if(vertice_1 != null && vertice_2 != null && !isNaN(vertice_1) && !isNaN(vertice_2)){
         links.push({source: nodes[vertice_1], target: nodes[vertice_2], left: true, right: true });
         restart();
+        return {1: vertice_1 ,2: vertice_2};
       }        
     }
     function verticeAleatorio() {
@@ -231,9 +254,16 @@
 
     function superSnakeEatsAll(){
       setInterval(function(){
-        novaAresta(lastNodeId,novoVertice());
-      //novaAresta(verticeAleatorio(),novoVertice());
-      },500);
+        //novaAresta(lastNodeId,novoVertice());
+        //novaAresta(verticeAleatorio(),novoVertice());
+        if(lastNodeId+1 < 30)
+          novoVertice();
+        if(links.length+1 < 30)
+          console.log(novaAresta(verticeAleatorio(),verticeAleatorio()));
+        else 
+          return;
+        console.log(links.length);
+      },250);
     }
 
      //JUST FOR FUN, THIS CAN BE HEAVY FOR YOU COMPUTER AFTER SOME TIME
