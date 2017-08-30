@@ -2,6 +2,8 @@ table td {
     text-align: center;
     font-weight: bold;
     padding: 0px;
+    background: #f1f4f9;
+    color: #57607c;
 }
 
 table th {
@@ -10,10 +12,37 @@ table th {
     padding: 0px;
 }
 
-table .empty {
-    background: red;
+table .white {
+    background: #c3d7ef;
+    color: #57607c;
+}
+table .black {
+    background: #3f465a;    
     color: #fff;
 }
+
+body {
+    color: #57607c;
+}
+
+table .red {
+    background: #ff1a4f;
+    color: #fff;
+}
+
+
+table .yellow {
+    background: #ffbf00;
+    color: #fff;
+}
+
+table .teal{
+    background : #15b7a1;
+    color: #fff;
+}
+
+
+
 header {
     background: #3f465a;
 }
@@ -41,3 +70,5 @@ input:not([type="button"]):not([type="submit"]):not([type="reset"]):hover, input
     border-color: #15b784;
     box-shadow: none;    
 }
+
+
