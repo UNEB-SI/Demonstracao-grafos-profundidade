@@ -4,6 +4,7 @@ table td {
     padding: 0px;
     background: #f1f4f9;
     color: #57607c;
+    cursor: pointer;
 }
 
 table th {

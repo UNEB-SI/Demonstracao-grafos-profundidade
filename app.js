@@ -21,14 +21,16 @@ var nodes = [
     /*{id: 0, reflexive: false},
     {id: 1, reflexive: true },
     {id: 2, reflexive: false}*/
-    {id: 0, reflexive: true},
+    /*{id: 0, reflexive: true},
     {id: 1, reflexive: true },
-    {id: 2, reflexive: true}
+    {id: 2, reflexive: true}*/
+    {id: 0, reflexive: true}
   ],
-  lastNodeId = 2,
+  //lastNodeId = 2,
+  lastNodeId = 0,
   links = [
-    {source: nodes[0], target: nodes[1], left: true, right: true },
-    {source: nodes[1], target: nodes[2], left: true, right: true }
+    /*{source: nodes[0], target: nodes[1], left: true, right: true },
+    {source: nodes[1], target: nodes[2], left: true, right: true }*/
   ];
 
 // init D3 force layout
@@ -319,6 +321,7 @@ function keydown() {
     case 8: // backspace
     case 46: // delete
       if(selected_node) {
+        //console.log(selected_node);
         nodes.splice(nodes.indexOf(selected_node), 1);
         spliceLinksForNode(selected_node);
       } else if(selected_link) {
