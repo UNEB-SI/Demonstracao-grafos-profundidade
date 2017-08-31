@@ -230,7 +230,8 @@
       j: -1,
       tam: 10,
       v: [0],
-      pre:[]
+      pre:[0],
+      count: 0
     };
 
     function novoVertice() {
@@ -350,24 +351,32 @@
 
     function next(){
       //console.log('next');
+      //algo();
+
       if(controle.j== -1 && controle.i== 0){
         for(i=1;i<=controle.tam;i++){
           novoVertice();
           restart();
         }
       }
-      if(controle.j==controle.tam && controle.i== controle.tam) return;
+      //algo();
 
-      algo();
+      //if(controle.j==controle.tam && controle.i== controle.tam) return;
+
+      algo(false);
 
       controle.j++;
       if(controle.j>controle.tam){
-        controle.i++;
-        controle.j=0;
+        //controle.i++;
+        //controle.j=0;
+       // clearInterval(controle.intervalLoop);
+        console.log('limp intervalo');
+        algo(true);
+        return;
       }
 
       if(controle.j==controle.tam && controle.i== controle.tam){
-        clearInterval(controle.intervalLoop);
+        //clearInterval(controle.intervalLoop);
         console.log('limp intervalo');
       }
       console.log(controle.i,controle.j);
@@ -378,19 +387,39 @@
       
     }
 
-    function algo(){
+    function algo(endOfLine){
       //next();
-      if($('#'+controle.i+''+controle.j).html()=='1'){
-        //let aux = controle.i;
-        if(controle.v.indexOf(controle.j) == -1){
-          controle.v.push(controle.j);
-          //novoVerticeId(controle.j);
-          novaAresta(controle.i,controle.j);
-          controle.i = controle.j;
-          controle.j = -1;
-        }
-        
+      //controle.count++;
+      //console.log('count: '+controle.count+' size:'+controle.tam*controle.tam);
+      if(controle.count > 1){
+        console.log('BRAAAAAAAAKE!');
+        pause();
       }
+      if(controle.i == 0 && controle.j ==0) controle.count++;
+
+      console.log('algo',controle.i,controle.j);
+
+
+
+      if(endOfLine){
+        let index = controle.v.indexOf(controle.i);
+        controle.j = controle.i;
+        controle.i = controle.pre[index];
+      }else{
+        if($('#'+controle.i+''+controle.j).html()=='1'){
+          //let aux = controle.i;
+          if(controle.v.indexOf(controle.j) == -1){
+            controle.v.push(controle.j);
+            controle.pre.push(controle.i);
+            //novoVerticeId(controle.j);
+            novaAresta(controle.i,controle.j);
+            controle.i = controle.j;
+            controle.j = -1;
+          }
+          
+        }
+      }
+      
     }
 
    
