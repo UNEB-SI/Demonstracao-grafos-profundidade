@@ -207,6 +207,39 @@
                     <div class="section">
                       <h3>Visualização</h3>
                       <graph style="margin:auto"></graph>
+                      <table class="scrollable" style="max-height: none;" id="tabela">
+                          <!--<caption>Matriz de adjacencia</caption>-->
+                          
+                          <tbody>
+                            
+                              <tr>
+                                  <th id="v">V</th>
+                                  <td id="v1">0</td>
+                                  <td id="v2">-</td>
+                                  <td id="v3">-</td>
+                                  <td id="v4">-</td>
+                                  <td id="v5">-</td>
+                                  <td id="v6">-</td>
+                                  <td id="v7">-</td>
+                                  <td id="v8">-</td>
+                                  <td id="v9">-</td>
+                                  <td id="v10">-</td>
+                                <tr>
+                                <tr>
+                                  <th id="pre">Pre</th>
+                                  <td id="pre1">0</td>
+                                  <td id="pre2">-</td>
+                                  <td id="pre3">-</td>
+                                  <td id="pre4">-</td>
+                                  <td id="pre5">-</td>
+                                  <td id="pre6">-</td>
+                                  <td id="pre7">-</td>
+                                  <td id="pre8">-</td>
+                                  <td id="pre9">-</td>
+                                  <td id="pre10">-</td>
+                                <tr>
+                              </tbody>
+                      </table>
                     </div>
                   </div>                
             </div>
@@ -410,7 +443,11 @@
           //let aux = controle.i;
           if(controle.v.indexOf(controle.j) == -1){
             controle.v.push(controle.j);
+              $('#v'+controle.v.length+'').html();
+              $('#v'+controle.v.length+'').html(controle.j);
             controle.pre.push(controle.i);
+              $('#pre'+controle.pre.length+'').html();
+              $('#pre'+controle.pre.length+'').html(controle.i);
             //novoVerticeId(controle.j);
             novaAresta(controle.i,controle.j);
             controle.i = controle.j;

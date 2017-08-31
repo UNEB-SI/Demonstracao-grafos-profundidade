@@ -1,7 +1,7 @@
 // set up SVG for D3
 
 var width  = 430;
-var height = 450;
+var height = 425;
 //var colors = d3.scale.category10();
 var colors = d3.scale.ordinal()
               .range([ "#15b7a1","#2a82ef", "#9f73f2", "#f24081","#ff003c", "#ff734d", "#e6ac00"]);
